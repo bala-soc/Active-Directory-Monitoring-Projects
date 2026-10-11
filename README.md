@@ -1,26 +1,28 @@
 # Active Directory Monitoring Projects
 
-Active Directory monitoring exercises with a security-operations focus: authentication visibility, suspicious sign-in patterns, account changes, and escalation-ready investigation notes.
+**Focus:** Authentication monitoring • Account changes • Windows Security Events • Alert investigation
 
-## Use-Case Areas
-- Authentication and account logon monitoring
-- Repeated failed logons and unusual sign-in patterns
+This repository is intended to document Active Directory monitoring from a security-operations perspective. Prioritise tested security use cases over a long list of monitoring platforms.
+
+## Suggested SOC Use Cases
+- Repeated failed logons and account lockouts
+- Successful logons following multiple failures
+- Account creation, disablement, or password changes
 - Privileged-group membership changes
-- Account creation, disablement, and lockout events
-- Dashboards and alerting for security-relevant events
+- Unusual logon times or source hosts, where the lab data supports that analysis
 
-## Tools and Data Sources
-Windows Security Event Logs, Active Directory Domain Services in a controlled lab, Splunk, and PowerShell. Use other monitoring platforms only when you have implemented and documented a working integration.
+## Lab and Data Sources
+Use a controlled lab domain or authorised Windows event logs. Record the operating system, logging configuration, event IDs and fields used, and any collection or SIEM integrations actually configured.
 
-## Recommended Case-Study Format
-1. Scenario and objective
-2. Lab architecture and event sources
-3. Relevant Windows Event IDs and fields
-4. Query, correlation logic, or alert rule
-5. Test procedure and observed output
-6. False positives, investigation notes, and response recommendations
+## Case Study Checklist
+1. Scenario and investigation objective
+2. Event IDs and fields examined
+3. Query or detection rule
+4. Test method and observed results
+5. Analyst conclusion and potential false positives
+6. Recommended response and limitations
 
-## Scope
-Prioritise a small number of validated security-monitoring cases over a broad list of monitoring products. Add screenshots, queries, and results only after testing them in your own lab.
+## Tools
+Windows Security logs, Active Directory Domain Services, PowerShell, and Splunk or other tools when implemented in the documented lab.
 
-> Use a lab domain or authorised environment. Redact usernames, hostnames, IP addresses, and other sensitive details where needed.
+> Document only integrations you have configured and tested. Redact sensitive account, domain, host, and network information.
